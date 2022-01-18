@@ -1,0 +1,32 @@
+{
+    "name": "earthnetwork-bot",
+    "version": "1.0.0",
+    "description": "Bot pour le Discord de EarthNetwork",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "node .",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/earthnetwork/bot.git"
+    },
+    "author": "GeekCorner <https://github.com/GeekCornerGH>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/earthnetwork/bot/issues"
+    },
+    "homepage": "https://github.com/earthnetwork/bot#readme",
+    "dependencies": {
+        "@discordjs/builders": "^0.11.0",
+        "@discordjs/rest": "^0.2.0-canary.0",
+        "discord-api-types": "^0.26.1",
+        "discord.js": "^13.6.0",
+        "dotenv": "^14.2.0",
+        "quotes-photos-generator": "^1.0.5"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.9",
+        "typescript": "^4.5.4"
+    }
+}
