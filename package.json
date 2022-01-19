@@ -23,7 +23,7 @@
         "discord-api-types": "^0.26.1",
         "discord.js": "^13.6.0",
         "dotenv": "^14.2.0",
-        "quotes-photos-generator": "^1.0.5"
+        "node-libcurl": "^2.3.3"
     },
     "devDependencies": {
         "@types/node": "^17.0.9",

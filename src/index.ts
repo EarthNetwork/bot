@@ -22,16 +22,6 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
 }
 
-// Interaction contextuelles
-client.context = new Collection();
-const contextFiles = fs.readdirSync(__dirname + '/interactions/context').filter(file => file.endsWith('.js'));
-//analyse de tous les fichiers
-for (const file of contextFiles) {
-    //importation de chaque fichier
-    const command = require(__dirname + `/interactions/context/${file}`);
-    //ajout de la commande à la collection
-    client.context.set(command.data.name, command);
-}
 
 //Event handler
 client.events = []
