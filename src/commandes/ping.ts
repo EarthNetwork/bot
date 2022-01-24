@@ -1,18 +1,18 @@
-import {SlashCommandBuilder} from '@discordjs/builders';
+import {SlashCommandBuilder} from "@discordjs/builders";
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('ping')
-		.setDescription('Pong!'),
+		.setName("ping")
+		.setDescription("Pong!"),
 	async execute(client, interaction) {
-        const pong = await interaction.reply({content: 'Pong!', fetchReply: true});
-        const latence = pong.createdAt - interaction.createdAt;
-        await interaction.editReply(`Pong!\nConnexion à la gateway: ${color(parseInt(client.ws.ping))} ${client.ws.ping}ms\nLatence du bot: ${color(latence)} ${pong.createdTimestamp - interaction.createdTimestamp}ms`);
+		const pong = await interaction.reply({content: "Pong!", fetchReply: true});
+		const latence = pong.createdAt - interaction.createdAt;
+		await interaction.editReply(`Pong!\nConnexion à la gateway: ${color(parseInt(client.ws.ping))} ${client.ws.ping}ms\nLatence du bot: ${color(latence)} ${pong.createdTimestamp - interaction.createdTimestamp}ms`);
 	},
 };
 
 function color(n : number) {
-    let result;
-    n <= 250 ? result = "🟢" : (n <= 500 ? result = "🟡" : result = "🔴");
-    return result;
+	let result;
+	n <= 250 ? result = "🟢" : (n <= 500 ? result = "🟡" : result = "🔴");
+	return result;
 }
