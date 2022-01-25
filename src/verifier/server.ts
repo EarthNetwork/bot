@@ -12,8 +12,6 @@ async function fetch(...args) {
 
 // Modules
 const pool = require("./pool")
-const {addRole} = require("./discord");
-
 //constantes
 const logger = new Signale({ scope: "Express" });
 const app = new Express();
@@ -48,6 +46,16 @@ app.post('/verify/:verifyId?', async (req, res) => {
     pool.removeLink(req.params.verifyId);
     res.sendFile(join(__dirname, '../../verifier/html/fini.html'));
 });
+
+async function addRole(userId) {
+    console.log(userId)
+    const guild = await discordClient.guilds.fetch(process.env.GUILD_ID);
+    const member = await guild.members.fetch(userId);
+    logger.info(member)
+    const role = await guild.roles.fetch(process.env.ROLE_ID);
+    await member.roles.add(role);
+    logger.info("Added role to " + member.user.tag);
+}
 function main(client) {
     discordClient = client;
     app.listen(8008, logger.info(`Écoute sur le port 8008`));

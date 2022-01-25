@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 #particles {
     width: 100%;

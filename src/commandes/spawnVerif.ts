@@ -1,10 +1,11 @@
-import { Client, CommandInteraction, MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
+import { Client, CommandInteraction, MessageActionRow, MessageButton, MessageEmbed, Permissions } from "discord.js";
 import { SlashCommandBuilder } from "@discordjs/builders";
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("spawnverif")
         .setDescription("Faire apparaître le message de vérification"),
     execute: async (client: Client, interaction: CommandInteraction) => {
+        if(!(await interaction.guild.members.fetch(interaction.user.id)).permissions.has(Permissions.FLAGS.ADMINISTRATOR)) return interaction.reply({ content: "Vous n'avez pas les permissions nécessaires pour effectuer cette commande", ephemeral: true });
         const button = new MessageButton()
         .setStyle("SUCCESS")
         .setEmoji("🔄")

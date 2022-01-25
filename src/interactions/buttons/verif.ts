@@ -2,7 +2,7 @@ import { ButtonInteraction, Client, MessageEmbed } from "discord.js";
 const pool = require("../../verifier/pool");
 
 module.exports = async(client:Client, interaction:ButtonInteraction)=> {
-    if(client.guilds.cache.get(interaction.guild.id).members.cache.get(interaction.user.id).roles.cache.has(process.env.ROLEID)) return interaction.reply({content:"Vous êtes déjà vérifié"})
+    if(client.guilds.cache.get(interaction.guild.id).members.cache.get(interaction.user.id).roles.cache.has(process.env.ROLE_ID)) return interaction.reply({content:"Vous êtes déjà vérifié", ephemeral:true});
     const link = pool.createLink(interaction.user.id)
     const embed = new MessageEmbed()
     .setColor("YELLOW")
