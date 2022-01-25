@@ -33,5 +33,19 @@ for (const file of eventfiles) {
 	client.events.push(eventName);
 }
 
+const verifier = require("./verifier/server")
+verifier.run(client);
+async function addRole (userId){
+	try {
+        const server = await client.guilds.fetch(process.env.GUILDID);
+        const role = await server.roles.fetch(process.env.ROLEID);
+        const membre = await server.members.fetch(userId);
+        await membre.roles.add(role.id).catch(console.error)
+        //await console.info("Ajout du rôle à l'utilisateur ", membre.user.tag);
+    } catch (error) {
+        console.error(error);
+    }
+};
+module.exports.addRole=addRole;
 //Connexion avec le token
 client.login(process.env.TOKEN);
