@@ -9,7 +9,7 @@ specifiers:
   body-parser: ^1.19.1
   discord-api-types: ^0.26.1
   discord.js: ^13.6.0
-  dotenv: ^14.3.0
+  dotenv: ^14.3.2
   ejs: ^3.1.6
   eslint: ^8.7.0
   express: ^4.17.2
@@ -25,7 +25,7 @@ dependencies:
   body-parser: 1.19.1
   discord-api-types: 0.26.1
   discord.js: 13.6.0
-  dotenv: 14.3.0
+  dotenv: 14.3.2
   ejs: 3.1.6
   express: 4.17.2
   https: 1.0.0
@@ -46,7 +46,7 @@ packages:
     resolution: {integrity: sha512-ZTB8yJdJKrKlq44dpWkNUrAtEJEq0gqpb7ASdv4vmq6/mZal5kOv312hQ56I/vxwMre+VIkoHquNUAfnTbiYtg==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
-      '@sindresorhus/is': 4.3.0
+      '@sindresorhus/is': 4.4.0
       discord-api-types: 0.26.1
       ts-mixer: 6.0.0
       tslib: 2.3.1
@@ -57,7 +57,7 @@ packages:
     resolution: {integrity: sha512-Vx2MjUZd6QVo1uS2uWt708Fd6cHWGFblAvbpL5EBO+kLl0BADmPwwvts+YJ/VfSywed6Vsk6K2cEooR/Ytjhjw==}
     engines: {node: '>=16.9.0'}
     dependencies:
-      '@sindresorhus/is': 4.3.0
+      '@sindresorhus/is': 4.4.0
       discord-api-types: 0.26.1
       ts-mixer: 6.0.0
       tslib: 2.3.1
@@ -147,8 +147,8 @@ packages:
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dev: false
 
-  /@sindresorhus/is/4.3.0:
-    resolution: {integrity: sha512-wwOvh0eO3PiTEivGJWiZ+b946SlMSb4pe+y+Ur/4S87cwo09pYi+FWHHnbrM3W9W7cBYKDqQXcrFYjYUCOJUEQ==}
+  /@sindresorhus/is/4.4.0:
+    resolution: {integrity: sha512-QppPM/8l3Mawvh4rn9CNEYIU9bxpXUCRMaX9yUpvBk1nMKusLKpfXGDEKExKaPhLzcn3lzil7pR6rnJ11HgeRQ==}
     engines: {node: '>=10'}
     dev: false
 
@@ -568,8 +568,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dotenv/14.3.0:
-    resolution: {integrity: sha512-PCTcOQSXVo9FI1dB7AichJXMEvmiGCq0gnCpjfDUc8505uR+2MeLXWe+Ue4PN5UXa2isHSa78sr7L59fk+2mnQ==}
+  /dotenv/14.3.2:
+    resolution: {integrity: sha512-vwEppIphpFdvaMCaHfCEv9IgwcxMljMw2TnAQBB4VWPvzXQLTb82jwmdOKzlEVUL3gNFT4l4TPKO+Bn+sqcrVQ==}
     engines: {node: '>=12'}
     dev: false
 
