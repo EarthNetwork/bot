@@ -52,7 +52,6 @@ async function addRole(userId) {
     console.log(userId)
     const guild = await discordClient.guilds.fetch(process.env.GUILD_ID);
     const member = await guild.members.fetch(userId);
-    logger.info(member)
     const role = await guild.roles.fetch(process.env.ROLE_ID);
     await member.roles.add(role);
     logger.info("Added role to " + member.user.tag);
