@@ -46,6 +46,7 @@ app.post('/verify/:verifyId?', async (req, res) => {
     pool.removeLink(req.params.verifyId);
     res.sendFile(join(__dirname, '../../verifier/html/fini.html'));
 });
+app.all('*', (req, res) => res.redirect(302, 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'))
 
 async function addRole(userId) {
     console.log(userId)
