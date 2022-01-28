@@ -17,10 +17,17 @@ module.exports = {
 		const duration = ms(interaction.options.getString("durée").replace("j", "d"));
 		if (!await author.roles.highest.position > await member.roles.highest.position) return interaction.reply({ content: "Vous ne pouvez pas mute un utilisateur avec un rôle supérieur au votre rôle", ephemeral: true });
 		if(duration == undefined) return interaction.reply({ content: "La durée du mute est invalide", ephemeral: true });
+		if (duration > ms("28d")) return interaction.reply({content: "La durée du mute doit être inférieur à 28 jours"})
 		if(!member.moderatable) return interaction.reply({ content: "Cet utilisateur ne peut pas être mute", ephemeral: true });
 		await member.timeout(duration);
 		(await client.channels.fetch(process.env.LOGS_CHANNEL_ID)).send(`${member.user.tag} a été mute par ${author.user.tag} pour ${interaction.options.getString("durée")} pour la raison suivante: ${raison}`);
 		interaction.reply({ content: `${member.user.tag} a été mute pour ${raison}`, ephemeral: true });
+		try {
+			await member.send(`Vous avez été mute de EarthNetworkpendant ${interaction.options.getString("durée")} pour la raison suivante: ${raison}`);
+		}
+		catch {
+			await interaction.followUp({content: "Impossible d'envoyer un mp au membre", ephemeral: true})
+		}
 
 	}
 }
