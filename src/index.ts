@@ -36,5 +36,7 @@ for (const file of eventfiles) {
 const verifier = require("./verifier/server")
 verifier.run(client);
 
+client.tempChannels = {public: []}
+
 //Connexion avec le token
 client.login(process.env.TOKEN);

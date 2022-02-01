@@ -1,6 +1,7 @@
 import { Client, GuildMember, MessageEmbed, TextChannel } from "discord.js";
 
 module.exports = async (client: Client, member: GuildMember) => {
+	if (member.user.bot) return;
 	const embed = new MessageEmbed()
 	.setTitle("Bienvenue sur le serveur !")
 	.setColor("GREEN")
